@@ -1,15 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\PortfolioController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get("hello", [UserController::class, "userMessage"]);
-
-// profile
-Route::get("/profile/{id}",[ProfileController::class,"index"]);
+Route::get('/', [PageController::class, "home"]);
+Route::get('/about', [PageController::class, "about"]);
+Route::get('/project', [PageController::class, "project"]);
+Route::get('/contact', [PageController::class, "contact"]);
